@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+ultralytics
+opencv-python-headless
+open-image-models[onnx]
+huggingface_hub
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
