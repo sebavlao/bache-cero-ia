@@ -1,6 +1,6 @@
 # bache-cero-ia
 
-Microservicio de visión por computadora de **Bache Cero**. Recibe imágenes de calles, difumina los rostros y las patentes que aparecen en ellas y, sobre esa misma imagen, detecta baches y grietas.
+Microservicio de visión por computadora de **Bache Cero**. Recibe una imagen de una calle, difumina los rostros y las patentes que aparecen en ella y, sobre esa misma imagen, detecta baches y grietas.
 
 Su función es analizar y devolver los resultados de los modelos: qué se detectó, con qué nivel de confianza y en qué ubicación de la imagen. No intenta determinar la gravedad de los daños ni establecer prioridades de reparación. Esas decisiones corresponden al sistema que utiliza el servicio y a las personas encargadas de revisarlas.
 
@@ -49,6 +49,12 @@ Para probar el análisis desde la terminal:
 
 ```bash
 curl -F file=@foto.jpg localhost:8000/v1/analyze
+```
+
+Con los parámetros opcionales (`conf` y `draw`, ver [API](#post-v1analyze)):
+
+```bash
+curl -F file=@foto.jpg "localhost:8000/v1/analyze?conf=0.1&draw=true"
 ```
 
 ## API
